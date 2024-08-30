@@ -1,6 +1,6 @@
 {
   "name": "@ryoppippi/mirror-jsr-to-npm",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "tasks": {
     "dev": "deno run --watch mod.ts",
     "check": "deno check ./**/*.ts && deno fmt --check",
