@@ -32,27 +32,32 @@ function getVersionStr(): string {
  * ex. "@octocat/hello-world" -> "@jsr/octocat__hello-world"
  */
 function convertToPackageName(name: string): string {
-  const [scope, pkg] = name.split("/");
-  if (!scope || !pkg) {
+  const [_scope, pkg] = name.split("/");
+  if (!_scope || !_scope.startsWith("@") || !pkg) {
     throw new Error(`Invalid package name: ${name}`);
   }
+  const scope = _scope.slice(1);
   return `@jsr/${scope}__${pkg}`;
 }
 
-const tmpDir = $.path(tmpdir());
+const tmpDir = $.path(tmpdir()).resolve();
+const outDir = tmpDir.join("./package");
 
 if (import.meta.main) {
+  await outDir.mkdir();
+
   $.cd(tmpDir);
 
   const packageName = convertToPackageName(process.env.PACKAGE_NAME ?? "");
   const packageVersion = process.env.PACKAGE_VERSION ?? getVersionStr();
 
-  download(packageName, {
+  await download(packageName, {
     registry: "https://npm.jsr.io",
     version: packageVersion,
+    dir: tmpDir.toString(),
   });
 
-  $.cd(tmpDir.join("./package"));
+  $.cd(outDir);
 
   const pkgJson = await $`cat ./package.json`.json() as PackageJson;
 
@@ -66,7 +71,7 @@ if (import.meta.main) {
   pkgJson.description = process.env.PACKAGE_DESCRIPTION;
   pkgJson.homepage = process.env.PACKAGE_HOMEPAGE ?? pkgJson.homepage;
   pkgJson.repository = process.env.PACKAGE_REPOSITORY ??
-    process.env.GITHUB_REPOSITORY;
+    `https://github.com/${process.env.GITHUB_REPOSITORY}`;
   pkgJson.license = process.env.PACKAGE_LICENSE ?? "MIT";
   pkgJson.author = process.env.PACKAGE_AUTHOR ??
     process.env.GITHUB_REPOSITORY_OWNER;
