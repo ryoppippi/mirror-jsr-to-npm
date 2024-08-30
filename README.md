@@ -2,6 +2,17 @@
 
 `mirror-jsr-to-npm` is a tool designed to mirror packages from JSR to npm. This utility simplifies the process of publishing JSR packages to the npm registry, making your packages more accessible to a wider audience.
 
+
+## 💡 Motivation
+
+The inspiration for creating `mirror-jsr-to-npm` came from [an issue made by a developer from China](https://github.com/samchon/typia/issues/1249).   
+They mentioned that accessing packages from JSR was slow in China and asked if I could also publish my packages to npm.  
+While I find JSR to be an excellent platform with its ability to handle builds, package.json generation, and other tasks effortlessly, npm, on the other hand, requires manual setup and configuration, which I find less appealing.
+
+Despite my preference for JSR, the request highlighted the need for broader accessibility. To address this, I decided to create a solution that would allow me to mirror my JSR packages to npm without compromising the developer experience I enjoy with JSR.
+
+As the official tools for this task are not yet available, I developed a CLI tool and integrated it with GitHub Actions. This setup automates the process, ensuring that my packages are easily accessible on npm for users who may experience slower access to JSR.
+
 ## 🌟 Features
 
 - Automatically downloads packages from JSR
