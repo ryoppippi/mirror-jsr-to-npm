@@ -29,6 +29,10 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    # if you need publish with provenance, you should set permissions
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@v3
       - uses: denoland/setup-deno@v1
@@ -38,8 +42,8 @@ jobs:
         run: deno run -A jsr:@ryoppippi/mirror-jsr-to-npm
         env:
           PACKAGE_DESCRIPTION: "Your package description"
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} // Set your npm token as a GitHub secret
-          NPM_CONFIG_PROVENANCE: true // If you publish with provenance
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # Set your npm token as a GitHub secret
+          NPM_CONFIG_PROVENANCE: true # If you publish with provenance
 ```
 
 Make sure to replace `@your-scope/your-package`, "Your package description", and "https://your-homepage.com" with your actual package details.
