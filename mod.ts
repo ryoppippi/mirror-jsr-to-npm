@@ -96,7 +96,10 @@ if (import.meta.main) {
   });
 
   try {
-    await $`npm publish ${process.env.NPM_OPTIONS ?? "--access public"}`;
+    await $`npm publish ${process.env.NPM_OPTIONS ?? "--access public"}`.env({
+      NPM_TOKEN: process.env.NPM_TOKEN,
+      NPM_CONFIG_PROVENANCE: process.env.NPM_CONFIG_PROVENANCE,
+    });
   } catch (e: unknown) {
     if (!process.env.DEBUG) {
       throw e;
