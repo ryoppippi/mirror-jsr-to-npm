@@ -49,10 +49,27 @@ jobs:
           deno-version: ${{ env.DENO_VERSION }}
       - run: deno publish --dry-run
 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: ${{ env.DENO_VERSION }}
+      - run: |
+            deno run -A ./mod.ts
+        env:
+          DEBUG: true
+          PACKAGE_NAME: '@ryoppippi/limo'
+          PACKAGE_VERSION: '0.1.2'
+          PACKAGE_DESCRIPTION: 'example'
+          NPM_CONFIG_PROVENANCE: '--dry-run'
+
   action-timeline:
     needs: 
       - ci
       - jsr-publish-dry-run
+      - test
     if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:

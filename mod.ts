@@ -78,6 +78,11 @@ if (import.meta.main) {
     }
   });
 
+  /* if debug, print package.json */
+  if (process.env.DEBUG) {
+    console.log(JSON.stringify(pkgJson, null, 2));
+  }
+
   await $`echo ${JSON.stringify(pkgJson, null, 2)} > ./package.json`;
 
   await $`npm publish ${process.env.NPM_OPTIONS ?? "--access public"}`;
