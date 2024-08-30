@@ -4,6 +4,7 @@ import process from "node:process";
 import { tmpdir } from "node:os";
 import { $ } from "@david/dax";
 import { download } from "nrd";
+import { publint } from "publint";
 import * as semver from "@std/semver";
 
 function getTagName(): string | undefined {
@@ -90,5 +91,16 @@ if (import.meta.main) {
 
   await $`echo ${JSON.stringify(pkgJson, null, 2)} > ./package.json`;
 
-  await $`npm publish ${process.env.NPM_OPTIONS ?? "--access public"}`;
+  await publint({
+    pkgDir: outDir.toString(),
+  });
+
+  try {
+    await $`npm publish ${process.env.NPM_OPTIONS ?? "--access public"}`;
+  } catch (e: unknown) {
+    if (!process.env.DEBUG) {
+      throw e;
+    }
+    console.info(e);
+  }
 }
