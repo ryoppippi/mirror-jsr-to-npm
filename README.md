@@ -75,8 +75,6 @@ jobs:
           NPM_CONFIG_PROVENANCE: true # If you publish with provenance
 ```
 
-Make sure to replace `@your-scope/your-package`, "Your package description", and "https://your-homepage.com" with your actual package details.
-
 ## 🔑 Environment Variables
 
 - `PACKAGE_NAME`: The name of your package (e.g., "@octocat/hello-world")
