@@ -77,7 +77,7 @@ jobs:
 
 ## 🔑 Environment Variables
 
-- `PACKAGE_NAME`: The name of your package (e.g., "@octocat/hello-world")
+- `PACKAGE_NAME`: The name of your package (optional, defaults to the git repository name with `@` prefix. e.g. `octocat/hello-world` -> `@octocat/hello-world`)
 - `PACKAGE_VERSION`: The version of your package (optional, defaults to the git tag)
 - `PACKAGE_DESCRIPTION`: A brief description of your package
 - `PACKAGE_HOMEPAGE`: The homepage URL of your package (optional, default is jsr page)

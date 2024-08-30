@@ -68,7 +68,8 @@ if (import.meta.main) {
     throw new Error("Version mismatch");
   }
 
-  pkgJson.name = process.env.PACKAGE_NAME;
+  pkgJson.name = process.env.PACKAGE_NAME ??
+    `@${process.env.GITHUB_REPOSITORY}`;
   pkgJson.description = process.env.PACKAGE_DESCRIPTION;
   pkgJson.homepage = process.env.PACKAGE_HOMEPAGE ?? pkgJson.homepage;
   pkgJson.repository = process.env.PACKAGE_REPOSITORY ??
