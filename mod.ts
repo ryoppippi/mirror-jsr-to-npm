@@ -49,10 +49,13 @@ if (import.meta.main) {
 
   $.cd(tmpDir);
 
-  const packageName = convertToPackageName(process.env.PACKAGE_NAME ?? "");
+  const packageName = process.env.PACKAGE_NAME ??
+    `@${process.env.GITHUB_REPOSITORY}`;
   const packageVersion = process.env.PACKAGE_VERSION ?? getVersionStr();
 
-  await download(packageName, {
+  const jsrPackageName = convertToPackageName(packageName);
+
+  await download(jsrPackageName, {
     registry: "https://npm.jsr.io",
     version: packageVersion,
     dir: tmpDir.toString(),
@@ -68,8 +71,7 @@ if (import.meta.main) {
     throw new Error("Version mismatch");
   }
 
-  pkgJson.name = process.env.PACKAGE_NAME ??
-    `@${process.env.GITHUB_REPOSITORY}`;
+  pkgJson.name = packageName;
   pkgJson.description = process.env.PACKAGE_DESCRIPTION;
   pkgJson.homepage = process.env.PACKAGE_HOMEPAGE ?? pkgJson.homepage;
   pkgJson.repository = process.env.PACKAGE_REPOSITORY ??
