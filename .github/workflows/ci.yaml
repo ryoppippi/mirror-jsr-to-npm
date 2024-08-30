@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.ts'
+      - '.github/workflows/test.yml'
+      - 'deno.jsonc'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**.ts'
+
+permissions:
+  contents: read
+
+env:
+  DENO_VERSION: 1.x
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v4
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: ${{ env.DENO_VERSION }}
+
+      - name: Check
+        run: deno task check
+
+      - name: Run linter
+        run: deno task lint
+
+  jsr-publish-dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: ${{ env.DENO_VERSION }}
+      - run: deno publish --dry-run
+
+  action-timeline:
+    needs: 
+      - ci
+      - jsr-publish-dry-run
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: Kesin11/actions-timeline@v2
