@@ -98,10 +98,7 @@ if (import.meta.main) {
   console.log(outDir);
 
   try {
-    await $`npm publish ${process.env.NPM_OPTIONS ?? "--access public"}`
-      .env("NODE_AUTH_TOKEN", process.env.NODE_AUTH_TOKEN)
-      .env("NPM_CONFIG_PROVENANCE", process.env.NPM_CONFIG_PROVENANCE)
-      .env("NPM_AUTH_TOKEN", process.env.NPM_AUTH_TOKEN);
+    await $`npm publish ${process.env.NPM_OPTIONS ?? "--access public"}`;
   } catch (e: unknown) {
     if (!process.env.DEBUG) {
       throw e;
