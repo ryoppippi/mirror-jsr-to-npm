@@ -95,9 +95,11 @@ if (import.meta.main) {
     pkgDir: outDir.toString(),
   });
 
+  console.log(outDir);
+
   try {
     await $`npm publish ${process.env.NPM_OPTIONS ?? "--access public"}`.env({
-      NPM_TOKEN: process.env.NPM_TOKEN,
+      NODE_AUTH_TOKEN: process.env.NODE_AUTH_TOKEN,
       NPM_CONFIG_PROVENANCE: process.env.NPM_CONFIG_PROVENANCE,
     });
   } catch (e: unknown) {

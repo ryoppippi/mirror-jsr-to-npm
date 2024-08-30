@@ -42,7 +42,7 @@ jobs:
         run: deno run -A jsr:@ryoppippi/mirror-jsr-to-npm
         env:
           PACKAGE_DESCRIPTION: "Your package description"
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # Set your npm token as a GitHub secret
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Set your npm token as a GitHub secret
           NPM_CONFIG_PROVENANCE: true # If you publish with provenance
 ```
 
