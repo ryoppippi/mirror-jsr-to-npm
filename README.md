@@ -22,12 +22,35 @@ To use `mirror-jsr-to-npm` in your GitHub Actions workflow, create a new workflo
 ```yaml
 name: Publish to npm
 
+env:
+  NODE_VERSION: lts/*
+  DENO_VERSION: v1.x
+
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
 
 jobs:
-  publish:
+  jsr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: ${{ env.DENO_VERSION }}
+      - name: Publish to jsr
+        run: deno publish
+
+  npm:
+    needs: 
+      - jsr
     runs-on: ubuntu-latest
     # if you need publish with provenance, you should set permissions
     permissions:
@@ -35,9 +58,13 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: 'https://registry.npmjs.org'
       - uses: denoland/setup-deno@v1
         with:
-          deno-version: v1.x
+          deno-version: ${{ env.DENO_VERSION }}
       - name: Publish to npm
         run: deno run -A jsr:@ryoppippi/mirror-jsr-to-npm
         env:
