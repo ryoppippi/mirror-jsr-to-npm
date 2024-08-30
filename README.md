@@ -1,6 +1,6 @@
 # mirror-jsr-to-npm
 
-`mirror-jsr-to-npm` is a tool designed to mirror packages from the JSR (JavaScript Registry) to npm. This utility simplifies the process of publishing JSR packages to the npm registry, making your packages more accessible to a wider audience.
+`mirror-jsr-to-npm` is a tool designed to mirror packages from JSR to npm. This utility simplifies the process of publishing JSR packages to the npm registry, making your packages more accessible to a wider audience.
 
 ## 🌟 Features
 
