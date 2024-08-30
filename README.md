@@ -1,5 +1,8 @@
 # mirror-jsr-to-npm
 
+[![JSR](https://jsr.io/badges/@ryoppippi/mirror-jsr-to-npm)](https://jsr.io/@ryoppippi/mirror-jsr-to-npm)
+[![JSR](https://jsr.io/badges/@ryoppippi/mirror-jsr-to-npm/score)](https://jsr.io/@ryoppippi/mirror-jsr-to-npm)
+
 `mirror-jsr-to-npm` is a tool designed to mirror packages from JSR to npm. This utility simplifies the process of publishing JSR packages to the npm registry, making your packages more accessible to a wider audience.
 
 
