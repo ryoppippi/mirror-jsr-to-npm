@@ -18,7 +18,7 @@
   },
   "imports": {
     "@cross/test": "jsr:@cross/test@^0.0.9",
-    "@david/dax": "jsr:@david/dax@^0.41.0",
+    "@david/dax": "jsr:@david/dax@^0.42.0",
     "@std/assert": "jsr:@std/assert@^1.0.0",
     "@std/semver": "jsr:@std/semver@^1.0.2",
     "nrd": "npm:nrd@^1.1.3",
