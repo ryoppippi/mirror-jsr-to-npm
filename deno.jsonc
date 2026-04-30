@@ -17,7 +17,7 @@
     ]
   },
   "imports": {
-    "@cross/test": "jsr:@cross/test@^0.0.9",
+    "@cross/test": "jsr:@cross/test@^0.0.14",
     "@david/dax": "jsr:@david/dax@^0.41.0",
     "@std/assert": "jsr:@std/assert@^1.0.0",
     "@std/semver": "jsr:@std/semver@^1.0.2",
