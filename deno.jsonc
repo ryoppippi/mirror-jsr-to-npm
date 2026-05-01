@@ -23,7 +23,7 @@
     "@std/semver": "jsr:@std/semver@^1.0.8",
     "nrd": "npm:nrd@^1.1.3",
     "publint": "npm:publint@^0.3.18",
-    "type-fest": "npm:type-fest@^4.26.0"
+    "type-fest": "npm:type-fest@^4.41.0"
   },
   "exports": "./mod.ts",
   "publish": {
