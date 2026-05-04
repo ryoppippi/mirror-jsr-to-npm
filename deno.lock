@@ -3,18 +3,20 @@
   "specifiers": {
     "jsr:@cross/runtime@1.0": "1.0.0",
     "jsr:@cross/test@^0.0.14": "0.0.14",
-    "jsr:@david/console-static-text@0.3": "0.3.4",
-    "jsr:@david/dax@0.45": "0.45.0",
-    "jsr:@david/path@0.2": "0.2.0",
-    "jsr:@david/which@~0.4.1": "0.4.2",
+    "jsr:@david/console-static-text@~0.3.2": "0.3.4",
+    "jsr:@david/console-static-text@~0.3.4": "0.3.4",
+    "jsr:@david/dax@0.46": "0.46.0",
+    "jsr:@david/path@0.3": "0.3.2",
+    "jsr:@david/path@~0.3.2": "0.3.2",
+    "jsr:@david/shell@~0.3.2": "0.3.3",
+    "jsr:@david/which@0.6": "0.6.0",
+    "jsr:@david/which@~0.5.1": "0.5.2",
     "jsr:@std/assert@^1.0.19": "1.0.19",
     "jsr:@std/bytes@^1.0.6": "1.0.6",
     "jsr:@std/fmt@1": "1.0.10",
-    "jsr:@std/fs@1": "1.0.23",
     "jsr:@std/internal@^1.0.12": "1.0.13",
     "jsr:@std/io@0.225": "0.225.3",
     "jsr:@std/path@1": "1.1.4",
-    "jsr:@std/path@^1.1.4": "1.1.4",
     "jsr:@std/semver@^1.0.8": "1.0.8",
     "npm:@types/node@*": "18.16.19",
     "npm:bumpp@*": "9.5.2",
@@ -38,27 +40,35 @@
     "@david/console-static-text@0.3.4": {
       "integrity": "1c596f500b075ff3c8bab1d328ca7148a88067fd9a506b16a73eeaf230c229fd"
     },
-    "@david/dax@0.45.0": {
-      "integrity": "ac7565dc5c3e5be953a18b505e5dd0d8a30ed53656b65fd34a53bd8d2d5d6b1e",
+    "@david/dax@0.46.0": {
+      "integrity": "fd86666a03410fc8ec763b7f9283bb9cfde1c4ade6d529e7522a94bec173d200",
       "dependencies": [
-        "jsr:@david/console-static-text",
-        "jsr:@david/path",
-        "jsr:@david/which",
+        "jsr:@david/console-static-text@~0.3.2",
+        "jsr:@david/path@~0.3.2",
+        "jsr:@david/shell",
+        "jsr:@david/which@~0.5.1",
+        "jsr:@std/fmt"
+      ]
+    },
+    "@david/path@0.3.2": {
+      "integrity": "f25aaa3de4d3b9edfe25ca5edf15e3014fee7df4f77d64327e5300c27c1a0497"
+    },
+    "@david/shell@0.3.3": {
+      "integrity": "0a54c57ed215e6d638c821c6c98f07f177b607f0e6e405dde144a602263a0f46",
+      "dependencies": [
+        "jsr:@david/console-static-text@~0.3.4",
+        "jsr:@david/path@0.3",
+        "jsr:@david/which@0.6",
         "jsr:@std/fmt",
-        "jsr:@std/fs",
         "jsr:@std/io",
-        "jsr:@std/path@1"
+        "jsr:@std/path"
       ]
     },
-    "@david/path@0.2.0": {
-      "integrity": "f2d7aa7f02ce5a55e27c09f9f1381794acb09d328f8d3c8a2e3ab3ffc294dccd",
-      "dependencies": [
-        "jsr:@std/fs",
-        "jsr:@std/path@1"
-      ]
+    "@david/which@0.5.2": {
+      "integrity": "cd284a87aecdb8e32a5b91a024813fb57cbb8b4889df7d1c90351f073a4301a9"
     },
-    "@david/which@0.4.2": {
-      "integrity": "440ee262bc0673b57a39ad4d0dc5673e515ddd41c049a55b2588a0881e5d4a8c"
+    "@david/which@0.6.0": {
+      "integrity": "efe63f07f6741b12b0d470a660f5c20dedf0af0e0c18b5c934d8a930bcaba4bf"
     },
     "@std/assert@1.0.19": {
       "integrity": "eaada96ee120cb980bc47e040f82814d786fe8162ecc53c91d8df60b8755991e",
@@ -71,13 +81,6 @@
     },
     "@std/fmt@1.0.10": {
       "integrity": "90dfba288802ac6de82fb31d0917eb9e4450b9925b954d5e51fc29ac07419db5"
-    },
-    "@std/fs@1.0.23": {
-      "integrity": "3ecbae4ce4fee03b180fa710caff36bb5adb66631c46a6460aaad49515565a37",
-      "dependencies": [
-        "jsr:@std/internal",
-        "jsr:@std/path@^1.1.4"
-      ]
     },
     "@std/internal@1.0.13": {
       "integrity": "2f9546691d4ac2d32859c82dff284aaeac980ddeca38430d07941e7e288725c0"
@@ -1127,7 +1130,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@cross/test@^0.0.14",
-      "jsr:@david/dax@0.45",
+      "jsr:@david/dax@0.46",
       "jsr:@std/assert@^1.0.19",
       "jsr:@std/semver@^1.0.8",
       "npm:nrd@^1.1.3",
