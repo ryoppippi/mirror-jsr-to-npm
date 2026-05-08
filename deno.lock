@@ -5,10 +5,10 @@
     "jsr:@cross/test@^0.0.14": "0.0.14",
     "jsr:@david/console-static-text@~0.3.2": "0.3.4",
     "jsr:@david/console-static-text@~0.3.4": "0.3.4",
-    "jsr:@david/dax@0.46": "0.46.0",
+    "jsr:@david/dax@~0.46.1": "0.46.1",
     "jsr:@david/path@0.3": "0.3.2",
     "jsr:@david/path@~0.3.2": "0.3.2",
-    "jsr:@david/shell@~0.3.2": "0.3.3",
+    "jsr:@david/shell@~0.3.3": "0.3.3",
     "jsr:@david/which@0.6": "0.6.0",
     "jsr:@david/which@~0.5.1": "0.5.2",
     "jsr:@std/assert@^1.0.19": "1.0.19",
@@ -40,8 +40,8 @@
     "@david/console-static-text@0.3.4": {
       "integrity": "1c596f500b075ff3c8bab1d328ca7148a88067fd9a506b16a73eeaf230c229fd"
     },
-    "@david/dax@0.46.0": {
-      "integrity": "fd86666a03410fc8ec763b7f9283bb9cfde1c4ade6d529e7522a94bec173d200",
+    "@david/dax@0.46.1": {
+      "integrity": "f0a9df2551b27fd19acbdbda50bb09c90ee81ba9289dd1730a627db94494afa4",
       "dependencies": [
         "jsr:@david/console-static-text@~0.3.2",
         "jsr:@david/path@~0.3.2",
@@ -1130,7 +1130,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@cross/test@^0.0.14",
-      "jsr:@david/dax@0.46",
+      "jsr:@david/dax@~0.46.1",
       "jsr:@std/assert@^1.0.19",
       "jsr:@std/semver@^1.0.8",
       "npm:nrd@^1.1.3",
