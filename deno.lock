@@ -3,18 +3,19 @@
   "specifiers": {
     "jsr:@cross/runtime@1.0": "1.0.0",
     "jsr:@cross/test@^0.0.14": "0.0.14",
-    "jsr:@david/console-static-text@~0.3.4": "0.3.4",
-    "jsr:@david/dax@0.47": "0.47.0",
-    "jsr:@david/path@0.3": "0.3.2",
-    "jsr:@david/path@~0.3.2": "0.3.2",
-    "jsr:@david/shell@0.4": "0.4.0",
-    "jsr:@david/which@0.7": "0.7.0",
+    "jsr:@david/console-static-text@~0.3.5": "0.3.5",
+    "jsr:@david/dax@~0.50.1": "0.50.1",
+    "jsr:@david/path@~0.3.4": "0.3.4",
+    "jsr:@david/shell@~0.7.2": "0.7.2",
+    "jsr:@david/which@~0.7.4": "0.7.4",
     "jsr:@std/assert@^1.0.19": "1.0.19",
     "jsr:@std/bytes@^1.0.6": "1.0.6",
     "jsr:@std/fmt@1": "1.0.10",
-    "jsr:@std/internal@^1.0.12": "1.0.13",
+    "jsr:@std/internal@^1.0.12": "1.0.14",
+    "jsr:@std/internal@^1.0.14": "1.0.14",
     "jsr:@std/io@0.225": "0.225.3",
-    "jsr:@std/path@1": "1.1.4",
+    "jsr:@std/path@1": "1.1.6",
+    "jsr:@std/path@^1.1.6": "1.1.6",
     "jsr:@std/semver@^1.0.8": "1.0.8",
     "npm:@types/node@*": "18.16.19",
     "npm:bumpp@*": "9.5.2",
@@ -35,40 +36,41 @@
         "jsr:@cross/runtime"
       ]
     },
-    "@david/console-static-text@0.3.4": {
-      "integrity": "1c596f500b075ff3c8bab1d328ca7148a88067fd9a506b16a73eeaf230c229fd"
+    "@david/console-static-text@0.3.5": {
+      "integrity": "7a6ab3610e6f0fa5743d56f7a05347a96afa9fae19de2d84ff964f09de441101"
     },
-    "@david/dax@0.47.0": {
-      "integrity": "93499a94e4ebc6b8182c4e301071e554eb921af3994a12e405962e6222e99cc8",
+    "@david/dax@0.50.1": {
+      "integrity": "baa67d0dda45447ff846bfa1ee25d070770ff1d6f92cf1edd512cf75a5e8e6d5",
       "dependencies": [
         "jsr:@david/console-static-text",
-        "jsr:@david/path@~0.3.2",
-        "jsr:@david/shell",
-        "jsr:@david/which",
-        "jsr:@std/fmt"
+        "jsr:@david/path",
+        "jsr:@david/shell"
       ]
     },
-    "@david/path@0.3.2": {
-      "integrity": "f25aaa3de4d3b9edfe25ca5edf15e3014fee7df4f77d64327e5300c27c1a0497"
+    "@david/path@0.3.4": {
+      "integrity": "6e9c8e8914401fa7489c50cc9214d5593229bdeb96b23c494f43ed2a518cbf67",
+      "dependencies": [
+        "jsr:@std/path@^1.1.6"
+      ]
     },
-    "@david/shell@0.4.0": {
-      "integrity": "7863cce36754571dabd593132b32a3aa68a55b7d6e09a4b7964da4165c37abe9",
+    "@david/shell@0.7.2": {
+      "integrity": "faea8457525c58c8409c189107a67abbfff7d9f3de6b3a369ee635be474b33ee",
       "dependencies": [
         "jsr:@david/console-static-text",
-        "jsr:@david/path@0.3",
+        "jsr:@david/path",
         "jsr:@david/which",
         "jsr:@std/fmt",
         "jsr:@std/io",
-        "jsr:@std/path"
+        "jsr:@std/path@1"
       ]
     },
-    "@david/which@0.7.0": {
-      "integrity": "2e7517b28ecd2c99afe70284f2660f2c11548e5b684fa751889f105e0e4f8fe5"
+    "@david/which@0.7.4": {
+      "integrity": "b4ed8e7f489b3689afb4b8315944211c807f91c03229e48ab888e55336c73087"
     },
     "@std/assert@1.0.19": {
       "integrity": "eaada96ee120cb980bc47e040f82814d786fe8162ecc53c91d8df60b8755991e",
       "dependencies": [
-        "jsr:@std/internal"
+        "jsr:@std/internal@^1.0.12"
       ]
     },
     "@std/bytes@1.0.6": {
@@ -77,8 +79,8 @@
     "@std/fmt@1.0.10": {
       "integrity": "90dfba288802ac6de82fb31d0917eb9e4450b9925b954d5e51fc29ac07419db5"
     },
-    "@std/internal@1.0.13": {
-      "integrity": "2f9546691d4ac2d32859c82dff284aaeac980ddeca38430d07941e7e288725c0"
+    "@std/internal@1.0.14": {
+      "integrity": "291516b3d4c35024d6ffbc0a9df5bf4c64116e05b50012cf846710152d2ffdf7"
     },
     "@std/io@0.225.3": {
       "integrity": "27b07b591384d12d7b568f39e61dff966b8230559122df1e9fd11cc068f7ddd1",
@@ -86,10 +88,10 @@
         "jsr:@std/bytes"
       ]
     },
-    "@std/path@1.1.4": {
-      "integrity": "1d2d43f39efb1b42f0b1882a25486647cb851481862dc7313390b2bb044314b5",
+    "@std/path@1.1.6": {
+      "integrity": "c68485c2a4dfbb5ae3cc74fae4e8c4e5d874cf8a8ed12927917235c758b46cbe",
       "dependencies": [
-        "jsr:@std/internal"
+        "jsr:@std/internal@^1.0.14"
       ]
     },
     "@std/semver@1.0.8": {
@@ -1132,7 +1134,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@cross/test@^0.0.14",
-      "jsr:@david/dax@0.47",
+      "jsr:@david/dax@~0.50.1",
       "jsr:@std/assert@^1.0.19",
       "jsr:@std/semver@^1.0.8",
       "npm:nrd@^1.1.3",
