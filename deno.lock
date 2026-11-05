@@ -4,7 +4,7 @@
     "jsr:@cross/runtime@1.0": "1.0.0",
     "jsr:@cross/test@^0.0.14": "0.0.14",
     "jsr:@david/console-static-text@~0.3.5": "0.3.5",
-    "jsr:@david/dax@~0.50.1": "0.50.1",
+    "jsr:@david/dax@~0.50.2": "0.50.2",
     "jsr:@david/path@~0.3.4": "0.3.4",
     "jsr:@david/shell@~0.7.2": "0.7.2",
     "jsr:@david/which@~0.7.4": "0.7.4",
@@ -39,8 +39,8 @@
     "@david/console-static-text@0.3.5": {
       "integrity": "7a6ab3610e6f0fa5743d56f7a05347a96afa9fae19de2d84ff964f09de441101"
     },
-    "@david/dax@0.50.1": {
-      "integrity": "baa67d0dda45447ff846bfa1ee25d070770ff1d6f92cf1edd512cf75a5e8e6d5",
+    "@david/dax@0.50.2": {
+      "integrity": "384f6d489591e5e6b306ea0ec0948bb354b650b0fdb0a8e9afba2dd012720c57",
       "dependencies": [
         "jsr:@david/console-static-text",
         "jsr:@david/path",
@@ -1134,7 +1134,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@cross/test@^0.0.14",
-      "jsr:@david/dax@~0.50.1",
+      "jsr:@david/dax@~0.50.2",
       "jsr:@std/assert@^1.0.19",
       "jsr:@std/semver@^1.0.8",
       "npm:nrd@^1.1.3",
