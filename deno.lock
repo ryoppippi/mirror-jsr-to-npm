@@ -24,7 +24,7 @@
     "npm:nrd@*": "1.1.3",
     "npm:nrd@^1.1.3": "1.1.3",
     "npm:publint@~0.3.25": "0.3.25",
-    "npm:type-fest@^5.10.0": "5.10.0"
+    "npm:type-fest@6": "6.0.1"
   },
   "jsr": {
     "@cross/runtime@1.0.0": {
@@ -1098,8 +1098,8 @@
     "type-detect@4.1.0": {
       "integrity": "sha512-Acylog8/luQ8L7il+geoSxhEkazvkslg7PSNKOX59mbB9cOveP5aq9h74Y7YU8yDpJwetzQQrfIwtf4Wp4LKcw=="
     },
-    "type-fest@5.10.0": {
-      "integrity": "sha512-NoSdpq/WEiAg5sjmBkmV/hfxv6HJH4NqPNrqjtSO5CwRmpsDfaf4begxW34KdJykH/l1yHtwBWQkCRdoXO8mPA==",
+    "type-fest@6.0.1": {
+      "integrity": "sha512-nnRRKEpyNxX4XkeR6dpMy27ZNT5/nE3D73fs5FcKW/+OtqwSmdshWUw5azvpsMzjst5rAUe61ZxilQ70YFS9yA==",
       "dependencies": [
         "tagged-tag"
       ]
@@ -1139,7 +1139,7 @@
       "jsr:@std/semver@^1.0.8",
       "npm:nrd@^1.1.3",
       "npm:publint@~0.3.25",
-      "npm:type-fest@^5.10.0"
+      "npm:type-fest@6"
     ]
   }
 }
